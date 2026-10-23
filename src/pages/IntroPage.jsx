@@ -15,9 +15,21 @@ export default function IntroPage() {
       video.currentTime = 0;
       video.muted = true;
       video.defaultMuted = true;
-      video.play().catch(err => {
-        console.warn('Autoplay bloqué par le navigateur:', err);
-      });
+      
+      const tryPlay = () => {
+        video.play().catch(err => {
+          console.warn('Autoplay bloqué par le navigateur:', err);
+          const retry = () => {
+            video.play().catch(() => {});
+            window.removeEventListener('touchstart', retry);
+            window.removeEventListener('click', retry);
+          };
+          window.addEventListener('touchstart', retry, { once: true });
+          window.addEventListener('click', retry, { once: true });
+        });
+      };
+
+      tryPlay();
     }
   }, []);
 

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowRight, Volume2, VolumeX, ShoppingBag, Sparkles, ZoomIn, X } from 'lucide-react';
 import Header from '../components/Header';
@@ -8,7 +8,37 @@ export default function AccueilPage() {
   const navigate = useNavigate();
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [activePreview, setActivePreview] = useState(null); // Lightbox modal si l'utilisateur clique sur une illustration
+
+  // Démarrage instantané de la vidéo avec sécurité mobile
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+
+      const tryPlay = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise
+            .then(() => setIsPlaying(true))
+            .catch(() => {
+              // Si le navigateur mobile exige une interaction, lancer dès le premier contact
+              const retry = () => {
+                video.play().then(() => setIsPlaying(true)).catch(() => {});
+                window.removeEventListener('touchstart', retry);
+                window.removeEventListener('click', retry);
+              };
+              window.addEventListener('touchstart', retry, { once: true });
+              window.addEventListener('click', retry, { once: true });
+            });
+        }
+      };
+
+      tryPlay();
+    }
+  }, []);
 
   const handleToggleSound = () => {
     if (videoRef.current) {
@@ -27,19 +57,9 @@ export default function AccueilPage() {
       <Header />
       <CartDrawer />
 
-      {/* ARRIÈRE-PLAN FLOU ATMOSPHÉRIQUE */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-35 filter blur-3xl scale-110 z-0">
-        <video
-          src="/videos/atmosphere.mp4"
-          playsInline
-          webkit-playsinline="true"
-          muted
-          defaultMuted
-          autoPlay
-          loop
-          preload="auto"
-          className="w-full h-full object-cover"
-        />
+      {/* ARRIÈRE-PLAN ATMOSPHÉRIQUE LÉGER (Chargement instantané 0ms, zéro conflit de lecture) */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-[#1E293B]/30 via-[#13161C]/50 to-transparent rounded-full filter blur-[140px] opacity-70" />
       </div>
 
       {/* SECTION CENTRALE : VIDÉO ENCADRÉE PAR LES 2 ILLUSTRATIONS LOOKBOOK */}
@@ -78,20 +98,37 @@ export default function AccueilPage() {
         </aside>
 
         {/* CONTENEUR PRINCIPAL DE LA VIDÉO MANNEQUIN (Format 9:16 centré) */}
-        <section className="relative h-[70vh] sm:h-[75vh] max-w-[440px] lg:max-w-[460px] w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.85)] bg-black/60 flex flex-col justify-end flex-shrink-0 z-20">
+        <section className="relative h-[70vh] sm:h-[75vh] max-w-[440px] lg:max-w-[460px] w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.85)] bg-[#13161C] flex flex-col justify-end flex-shrink-0 z-20">
           
-          {/* Vidéo Mannequin principale */}
+          {/* Placeholder élégant pendant le chargement (Empêche l'écran noir) */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#13161C] z-10 transition-opacity duration-500">
+              <img
+                src="/brand/logo.svg"
+                alt="Le Môgô de God"
+                className="h-16 w-auto opacity-35 mb-4 animate-pulse"
+              />
+              <div className="w-7 h-7 rounded-full border-2 border-white/20 border-t-white animate-spin" />
+            </div>
+          )}
+
+          {/* Vidéo Mannequin principale avec démarrage prioritaire */}
           <video
             ref={videoRef}
             src="/videos/atmosphere.mp4"
             playsInline
             webkit-playsinline="true"
+            x5-playsinline="true"
             muted={isMuted}
             defaultMuted
             autoPlay
             loop
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+            onPlaying={() => setIsPlaying(true)}
+            onCanPlay={() => setIsPlaying(true)}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+              isPlaying ? 'opacity-100' : 'opacity-80'
+            }`}
           />
 
           {/* Dégradé de contraste en bas pour le bouton */}
