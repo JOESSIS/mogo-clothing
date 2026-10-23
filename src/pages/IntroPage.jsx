@@ -89,9 +89,9 @@ export default function IntroPage() {
       </div>
 
       {/* GRAND BOUTON « ENTRER DANS NOTRE ATMOSPHÈRE »
-          Positionné BIEN EN BAS et apparaît UNIQUEMENT à la fin de la vidéo */}
+          Monté légèrement vers le milieu (zone basse-médiane harmonieuse) */}
       <div
-        className={`absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md flex justify-center transition-all duration-1000 ${
+        className={`absolute bottom-20 sm:bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md flex justify-center transition-all duration-1000 ${
           isEnded
             ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 scale-95 translate-y-8 pointer-events-none'
