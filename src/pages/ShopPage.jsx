@@ -33,13 +33,13 @@ export default function ShopPage() {
       <CartDrawer />
 
       {/* Hero section de la boutique */}
-      <section className="pt-24 sm:pt-28 md:pt-32 pb-6 px-4 sm:px-6 max-w-7xl mx-auto w-full text-center">
-        <h1 className="text-3xl sm:text-5xl md:text-7xl text-[#111317] mb-2 sm:mb-3 leading-tight tracking-normal">
-          <span className="font-amazing font-bold mr-2 sm:mr-4">Le</span>
+      <section className="pt-32 sm:pt-36 pb-8 px-4 sm:px-6 max-w-7xl mx-auto w-full text-center">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl text-[#111317] mb-3 leading-tight tracking-normal">
+          <span className="font-amazing font-bold mr-3 sm:mr-4">Le</span>
           <span className="font-jamaica font-black tracking-normal">Catalogue</span>
         </h1>
 
-        <p className="text-xs sm:text-base text-[#4B5563] max-w-2xl mx-auto mb-2 px-2">
+        <p className="text-sm sm:text-base text-[#4B5563] max-w-2xl mx-auto mb-2">
           Explorez les créations exclusives de la marque. Chaque vêtement allie confection haut de gamme et identité céleste.
         </p>
       </section>

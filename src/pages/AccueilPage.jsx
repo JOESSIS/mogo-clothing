@@ -43,7 +43,7 @@ export default function AccueilPage() {
       </div>
 
       {/* SECTION CENTRALE : VIDÉO ENCADRÉE PAR LES 2 ILLUSTRATIONS LOOKBOOK */}
-      <main className="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8 xl:gap-12 pt-20 sm:pt-24 md:pt-28 pb-6 px-4 max-w-[1440px] mx-auto w-full">
+      <main className="relative z-10 flex-1 flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-8 xl:gap-12 pt-28 sm:pt-32 pb-8 px-4 max-w-[1440px] mx-auto w-full">
         
         {/* ILLUSTRATION GAUCHE (LOOKBOOK 01) */}
         <aside className="hidden md:flex flex-col items-center justify-center w-52 lg:w-64 xl:w-72 flex-shrink-0 group">
@@ -77,8 +77,8 @@ export default function AccueilPage() {
           </div>
         </aside>
 
-        {/* CONTENEUR PRINCIPAL DE LA VIDÉO MANNEQUIN (Format 9:16 centré et proportionnel) */}
-        <section className="relative h-[58vh] sm:h-[66vh] md:h-[72vh] max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.85)] bg-black/60 flex flex-col justify-end flex-shrink-0 z-20">
+        {/* CONTENEUR PRINCIPAL DE LA VIDÉO MANNEQUIN (Format 9:16 centré) */}
+        <section className="relative h-[70vh] sm:h-[75vh] max-w-[440px] lg:max-w-[460px] w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.85)] bg-black/60 flex flex-col justify-end flex-shrink-0 z-20">
           
           {/* Vidéo Mannequin principale */}
           <video
@@ -91,7 +91,7 @@ export default function AccueilPage() {
             autoPlay
             loop
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dégradé de contraste en bas pour le bouton */}
@@ -101,16 +101,16 @@ export default function AccueilPage() {
           <button
             onClick={handleToggleSound}
             aria-label={isMuted ? 'Activer le son' : 'Couper le son'}
-            className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20 p-2 sm:p-2.5 rounded-full bg-black/60 hover:bg-black/85 border border-white/20 text-white hover:text-white backdrop-blur-md transition-all shadow-md"
+            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/50 hover:bg-black/80 border border-white/20 text-white hover:text-white backdrop-blur-md transition-all shadow-md"
           >
             {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
           </button>
 
           {/* ZONE D'ACTION : BOUTON BLANC NON REMPLI « VOIR TOUS LES PRODUITS » */}
-          <div className="relative z-20 p-4 sm:p-6 text-center flex flex-col items-center">
+          <div className="relative z-20 p-6 text-center flex flex-col items-center">
             <button
               onClick={handleGoToShop}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full bg-transparent hover:bg-white/10 border-2 border-white text-white font-extrabold text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-2.5 sm:gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:scale-105 backdrop-blur-sm"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-transparent hover:bg-white/10 border-2 border-white text-white font-extrabold text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.25)] hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] hover:scale-105 backdrop-blur-sm"
             >
               <ShoppingBag className="w-4 h-4 text-white" />
               <span>Voir tous les produits</span>

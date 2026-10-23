@@ -28,7 +28,7 @@ export default function ContactPage() {
       <Header />
       <CartDrawer />
 
-      <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-20 w-full">
+      <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 pt-32 sm:pt-36 pb-20 w-full">
         <div className="text-center mb-12 sm:mb-16">
           <span className="font-boardley text-3xl sm:text-4xl text-[#F298BC] block mb-2">
             Contact
