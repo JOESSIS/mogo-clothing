@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-[#0A0B0D]/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-24 sm:h-28 flex items-center justify-between relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 md:h-24 flex items-center justify-between relative">
         {/* Navigation gauche (Desktop) - Police Boardley */}
         <nav className="hidden md:flex items-center gap-8">
           <Link
@@ -43,29 +43,29 @@ export default function Header() {
         </nav>
 
         {/* Bouton Hamburger Mobile (Gauche) */}
-        <div className="flex md:hidden items-center">
+        <div className="flex md:hidden items-center z-10">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-white hover:text-white transition-colors"
+            className="p-1.5 text-white hover:text-white transition-colors"
             aria-label="Menu de navigation"
           >
-            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* LOGO OFFICIEL GRAND FORMAT CENTRÉ AU MILIEU */}
         <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-center flex items-center justify-center">
-          <Link to="/accueil" className="group block focus:outline-none focus:ring-2 focus:ring-white/40 rounded-lg p-1.5" title="Le Môgô de God">
+          <Link to="/accueil" className="group block focus:outline-none focus:ring-2 focus:ring-white/40 rounded-lg p-1" title="Le Môgô de God">
             <img
               src="/brand/logo.svg"
               alt="Le Môgô de God Clothing"
-              className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_16px_rgba(255,255,255,0.3)]"
+              className="h-10 sm:h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_4px_16px_rgba(255,255,255,0.3)]"
             />
           </Link>
         </div>
 
         {/* Navigation droite (Desktop) - Police Boardley + Panier */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 sm:gap-8 z-10">
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/a-propos"
@@ -93,9 +93,9 @@ export default function Header() {
           <button
             onClick={openCart}
             aria-label={`Ouvrir le panier (${totalItems} articles)`}
-            className="relative p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all focus:outline-none focus:ring-2 focus:ring-white shadow-sm hover:scale-105"
+            className="relative p-2 sm:p-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all focus:outline-none focus:ring-2 focus:ring-white shadow-sm hover:scale-105"
           >
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
             {totalItems > 0 && (
               <span className="absolute -top-1 -right-1 bg-white text-[#0A0B0D] font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-pulse">
                 {totalItems}
