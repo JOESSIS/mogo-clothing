@@ -1,0 +1,15 @@
+node_modules
+dist
+.env
+*.log
+cloudflared.exe
+*.bat
+.DS_Store
+*.mp4
+!public/videos/*.mp4
+apple-design-skill-main
+ui-ux-pro-max-skill-main
+doc pour stucturer le vibe codin
+image
+tunnel.js
+logo de la marque.jpg

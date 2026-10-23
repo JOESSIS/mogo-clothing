@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="100%" height="100%" fill="none">
+  <!-- LE MÔGÔ DE -->
+  <text x="250" y="52" 
+        text-anchor="middle" 
+        fill="#FFFFFF" 
+        font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" 
+        font-size="28" 
+        font-weight="700" 
+        letter-spacing="9">LE MÔGÔ DE</text>
+
+  <!-- GOD -->
+  <g fill="#FFFFFF">
+    <!-- G -->
+    <path d="M 125 155 C 125 110 155 85 195 85 C 228 85 248 102 254 122 L 230 128 C 226 114 214 105 195 105 C 168 105 147 125 147 155 C 147 185 168 205 195 205 C 215 205 228 195 231 178 L 195 178 L 195 160 L 254 160 L 254 185 C 248 208 227 225 195 225 C 155 225 125 200 125 155 Z" />
+
+    <!-- O -->
+    <path d="M 275 155 C 275 115 298 85 335 85 C 372 85 395 115 395 155 C 395 195 372 225 335 225 C 298 225 275 195 275 155 Z M 298 155 C 298 183 312 205 335 205 C 358 205 372 183 372 155 C 372 127 358 105 335 105 C 312 105 298 127 298 155 Z" />
+
+    <!-- D with Cross inside & Bible at bottom -->
+    <g transform="translate(295, 0)">
+      <!-- Main D contour -->
+      <path d="M 115 85 L 152 85 C 185 85 208 108 208 150 C 208 190 185 212 152 212 L 115 212 L 115 85 Z M 136 105 L 136 192 L 150 192 C 172 192 186 176 186 150 C 186 122 172 105 150 105 L 136 105 Z" />
+
+      <!-- Cross inside the D -->
+      <g transform="translate(155, 116)">
+        <!-- Vertical beam -->
+        <rect x="5" y="0" width="8" height="42" rx="1.5" fill="#FFFFFF"/>
+        <!-- Horizontal beam -->
+        <rect x="-3" y="10" width="24" height="7" rx="1.5" fill="#FFFFFF"/>
+      </g>
+
+      <!-- Bible / Book at bottom base of D -->
+      <g transform="translate(118, 198)">
+        <!-- Book spine & cover base -->
+        <path d="M 0 5 L 36 5 C 40 5 44 8 46 11 L 46 14 C 44 11 40 8 36 8 L 0 8 Z" fill="#FFFFFF"/>
+        <path d="M 0 13 L 36 13 C 40 13 44 16 46 19 L 46 21 C 44 18 40 15 36 15 L 0 15 Z" fill="#FFFFFF"/>
+        <!-- Ribbon bookmark -->
+        <path d="M 38 18 L 44 18 L 47 28 L 41 24 L 35 28 Z" fill="#FFFFFF"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- CLOTHING with tag icon -->
+  <g transform="translate(175, 245)">
+    <!-- Clothing Tag Icon -->
+    <g transform="translate(0, 0)">
+      <path d="M 12 2 L 24 14 L 14 24 L 2 12 L 2 4 C 2 2.9 2.9 2 4 2 L 12 2 Z" 
+            stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      <circle cx="7" cy="7" r="1.8" fill="#FFFFFF"/>
+      <!-- Small tag string -->
+      <path d="M 6 5 C 4 3 2 4 1 6 C 0 8 2 10 3 10" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- CLOTHING text -->
+    <text x="38" y="18" 
+          fill="#FFFFFF" 
+          font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" 
+          font-size="20" 
+          font-weight="700" 
+          letter-spacing="9">CLOTHING</text>
+  </g>
+</svg>

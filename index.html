@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/brand/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Môgô de God — Clothing</title>
+    <meta name="description" content="Streetwear spirituel & urbain haut de gamme. Entrez dans notre atmosphère." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Borel&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,700&family=Inter:wght@300;400;500;600;700;800&family=Pacifico&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Rozha+One&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              amazing: ['Fraunces', 'DM Serif Display', 'Bropella', 'serif'],
+              boardley: ['Borel', 'Pacifico', 'Boardley', 'cursive'],
+              jamaica: ['Transcity', 'Jamaica', 'Abril Fatface', 'Rozha One', 'Playfair Display', 'serif'],
+            },
+            colors: {
+              mogo: {
+                dark: '#0A0B0D',
+                surface: '#13161C',
+                pink: '#F298BC',
+                slate: '#2E3640',
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#0A0B0D] text-[#F7F8FA] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
