@@ -89,12 +89,12 @@ export default function IntroPage() {
       </div>
 
       {/* GRAND BOUTON « ENTRER DANS NOTRE ATMOSPHÈRE »
-          Monté légèrement vers le milieu (zone basse-médiane harmonieuse) */}
+          Positionné pile au CENTRE de l'écran */}
       <div
-        className={`absolute bottom-20 sm:bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 z-20 w-[90%] max-w-md flex justify-center transition-all duration-1000 ${
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[90%] max-w-md flex justify-center transition-all duration-700 ${
           isEnded
-            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 scale-95 translate-y-8 pointer-events-none'
+            ? 'opacity-100 scale-100 pointer-events-auto'
+            : 'opacity-0 scale-95 pointer-events-none'
         }`}
       >
         <button
